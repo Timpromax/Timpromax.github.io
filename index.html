@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <title>Important Message</title>
   <style>
-    body {
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    html, body {
       margin: 0;
+      padding: 0;
+      background-color: black;
+      overflow: hidden;
+      height: 100%;
     }
 
-    iframe {
-      width: 640px;
-      height: 360px;
-      border: none;
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 720px;
+      height: auto;
+      pointer-events: none; /* 無法點擊影片 */
     }
   </style>
 </head>
 <body oncontextmenu="return false;" onkeydown="return false;">
 
-  <iframe 
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ"
-    allow="autoplay"
-    allowfullscreen>
-  </iframe>
+  <video autoplay muted loop playsinline>
+    <source src="rickroll.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
 </body>
 </html>
