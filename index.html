@@ -4,47 +4,29 @@
   <meta charset="UTF-8">
   <title>Important Message</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
+    body {
       background-color: black;
-      overflow: hidden;
-      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
+
     iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+      width: 640px;
+      height: 360px;
       border: none;
-      width: 100%;
-      height: 100%;
-      pointer-events: none; /* 禁止點擊 iframe（讓暫停鍵失效） */
     }
   </style>
 </head>
 <body oncontextmenu="return false;" onkeydown="return false;">
 
-  <iframe id="rickroll" 
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&mute=0"
-    allow="autoplay; fullscreen"
+  <iframe 
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ"
+    allow="autoplay"
     allowfullscreen>
   </iframe>
-
-  <script>
-    // 自動進入全螢幕
-    document.addEventListener("DOMContentLoaded", () => {
-      const el = document.documentElement;
-      const enterFullscreen = () => {
-        if (el.requestFullscreen) el.requestFullscreen();
-        else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-        else if (el.msRequestFullscreen) el.msRequestFullscreen();
-      };
-      enterFullscreen();
-
-      // 每隔 3 秒強制再次請求全螢幕（防止用戶 ESC 退出）
-      setInterval(enterFullscreen, 3000);
-    });
-  </script>
 
 </body>
 </html>
